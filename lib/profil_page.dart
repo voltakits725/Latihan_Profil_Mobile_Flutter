@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'widgets/profile_avatar.dart';
+import 'widgets/profile_info.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -17,30 +18,13 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              radius: 60,
-              backgroundColor: Colors.grey,
-              child: Icon(
-                Icons.person,
-                size: 60,
-                color: Colors.white,
-              ),
-            ),
+            const ProfileAvatar(),
+
             const SizedBox(height: 20),
-            const Text(
-              'Rafly Kurniawan',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Mahasiswa Teknik Informatika',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[700],
-              ),
+
+            const ProfileInfo(
+              name: 'Rafly Kurniawan',
+              role: 'Mahasiswa Teknik Informatika',
             ),
           ],
         ),
