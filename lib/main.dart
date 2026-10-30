@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pertemuanke5/profil_page.dart';
+import 'package:pertemuanke5/skills_page.dart';
 
 void main(){
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
-      home: ProfilePage(),
+      home: SkillsCard(),
     );
   }
 }
