@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pertemuanke5/profil_page.dart';
+import 'package:pertemuanke5/project_page.dart';
 import 'package:pertemuanke5/skills_page.dart';
 
 void main(){
@@ -41,6 +42,7 @@ class _BottomNavigasiState extends State<BottomNavigasi> {
  final List<Widget> _daftarHalaman = [
   const ProfilePage(),
   const SkillsCard(),
+  const ProjectGua(),
  ];
 
  void _ketikaTabDitekan(int index){
@@ -74,6 +76,10 @@ class _BottomNavigasiState extends State<BottomNavigasi> {
             BottomNavigationBarItem(
               icon: Icon(Icons.info),
               label: 'Skill',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: 'My Project',
             ),
           ],
         ),
