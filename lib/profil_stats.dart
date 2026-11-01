@@ -12,8 +12,10 @@ class ProfileStats extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: const Row(
+        
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          
           StatItem(count: '15', label: 'Proyek'),
           SizedBox(width: 30),
           StatItem(count: '1.2K', label: 'Followers'),

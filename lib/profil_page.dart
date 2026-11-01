@@ -6,6 +6,13 @@ import 'widgets/profile_info.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+    final List<String> experiences = const [
+    'Senior Backend Engineer - EDC Bank DKI',
+    'Backend & System Architect - Secure Payment EDC',
+    'Lead Developer - Aplikasi Sekurindo'
+    'Backend Engineer - Pengembangan Sistem E-money',
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,8 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: 
+      Padding(
         padding: const EdgeInsets.only(top:40),
         child: Center(
         
@@ -30,7 +38,7 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: 20),
 
               const ProfileInfo(
-                name: 'Rafly Kurniawan',
+                name: 'Rafly Kurniawan Otw S.Kom',
                 role: 'Mahasiswa Teknik Informatika',
               ),
 
@@ -62,11 +70,31 @@ class ProfilePage extends StatelessWidget {
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Pengalaman Kerja',
+                  'Pengalaman Kerja? Belum ada jir, nganggur',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+              ),
+              const Divider(),
+
+              Expanded(
+                child: ListView.builder(
+                  itemCount: experiences.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 4,
+                      margin: const EdgeInsets.symmetric(vertical: 6),
+                      child: ListTile(
+                        leading: const Icon(Icons.work, color: Colors.blueAccent,
+                        
+                        ),
+                        title: Text(experiences[index]),
+                      ),
+                      
+                    );
+                  },
                 ),
               ),
               
@@ -78,3 +106,5 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
+
+
