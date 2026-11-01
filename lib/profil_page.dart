@@ -1,18 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:pertemuanke5/profil_stats.dart';
 import 'widgets/profile_avatar.dart';
 import 'widgets/profile_info.dart';
+import 'package:pertemuanke5/experience_card.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-    final List<String> experiences = const [
+
+  final List<String> experiences = const [
     'Senior Backend Engineer - EDC Bank DKI',
     'Backend & System Architect - Secure Payment EDC',
-    'Lead Developer - Aplikasi Sekurindo'
+    'Lead Developer - Aplikasi Sekurindo',
     'Backend Engineer - Pengembangan Sistem E-money',
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,17 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-      body: 
-      Padding(
-        padding: const EdgeInsets.only(top:40),
-        child: Center(
-        
+
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.only(
+          top: 40,
+          bottom: 20,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
-            
-            //mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              //SizedBox(height: 40,),
               const ProfileAvatar(),
 
               const SizedBox(height: 20),
@@ -43,8 +44,7 @@ class ProfilePage extends StatelessWidget {
               ),
 
               const SizedBox(height: 24),
-
-              // Tombol Edit Profil
+  
               ElevatedButton.icon(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -58,8 +58,6 @@ class ProfilePage extends StatelessWidget {
                 icon: const Icon(Icons.edit),
                 label: const Text('Edit Profil'),
               ),
-
-              const SizedBox(height: 24),
 
               const SizedBox(height: 24),
 
@@ -77,34 +75,23 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
+
               const Divider(),
 
-              Expanded(
-                child: ListView.builder(
-                  itemCount: experiences.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      elevation: 4,
-                      margin: const EdgeInsets.symmetric(vertical: 6),
-                      child: ListTile(
-                        leading: const Icon(Icons.work, color: Colors.blueAccent,
-                        
-                        ),
-                        title: Text(experiences[index]),
-                      ),
-                      
-                    );
-                  },
-                ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: experiences.length,
+                itemBuilder: (context, index) {
+                  return ExperienceCard(
+                    experience: experiences[index],
+                  );
+                },
               ),
-              
             ],
           ),
         ),
       ),
-      
     );
   }
 }
-
-
