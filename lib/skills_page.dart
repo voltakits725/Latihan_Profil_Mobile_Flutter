@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'widgets/skill_grid.dart';
 
 class SkillsCard extends StatelessWidget {
   const SkillsCard({super.key});
@@ -21,17 +21,17 @@ class SkillsCard extends StatelessWidget {
     {'nama': 'Tailwind', 'gambar': 'assets/images/tailwind.png'},
     {'nama': 'Express.js', 'gambar': 'assets/images/express.png'},
     {'nama': 'Flask', 'gambar': 'assets/images/flask.png'},
-    {'nama': 'ASP.NET', 'gambar': 'assets/images/asp.png'},
+    {'nama': 'VUE.JS', 'gambar': 'assets/images/vue.png'},
+
   ];
 
   // Data database
   final List<Map<String, String>> daftardatabase = const [
     {'nama': 'MySQL', 'gambar': 'assets/images/mysql.png'},
     {'nama': 'PostgreSQL', 'gambar': 'assets/images/postgresql.png'},
-    {'nama': 'MongoDB', 'gambar': 'assets/images/mongodb.png'},
+    {'nama': 'MongoDB', 'gambar': 'assets/images/mongo.png'},
     {'nama': 'SQLite', 'gambar': 'assets/images/sqlite.png'},
-    {'nama': 'Redis', 'gambar': 'assets/images/redis.png'},
-    {'nama': 'Supabase', 'gambar': 'assets/images/supabase.png'},
+    
   ];
 
   @override
@@ -65,81 +65,13 @@ class SkillsCard extends StatelessWidget {
             ],
           ),
         ),
-
         body: TabBarView(
           children: [
-            // Tab Bahasa
-            _buildGrid(daftarbahasa),
-
-            // Tab Framework
-            _buildGrid(daftarframework),
-
-            // Tab Database
-            _buildGrid(daftardatabase),
+            SkillGrid(daftar: daftarbahasa),
+            SkillGrid(daftar: daftarframework),
+            SkillGrid(daftar: daftardatabase),
           ],
         ),
-      ),
-    );
-  }
-
-  // Widget untuk menampilkan Grid Card
-  Widget _buildGrid(List<Map<String, String>> daftar) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: GridView.builder(
-        itemCount: daftar.length,
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: 1.0,
-        ),
-        itemBuilder: (context, index) {
-          return Card(
-            color: Colors.white,
-            elevation: 8,
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Image.asset(
-                      daftar[index]['gambar']!,
-                      fit: BoxFit.contain,
-                      width: double.infinity,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(
-                          Icons.image_not_supported,
-                          size: 50,
-                          color: Colors.grey,
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 4,
-                    right: 4,
-                    bottom: 10,
-                  ),
-                  child: Text(
-                    daftar[index]['nama']!,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.blueAccent,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
       ),
     );
   }
