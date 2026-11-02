@@ -1,4 +1,4 @@
-# Pertemuan Ke-5 — Flutter Portfolio App
+# Pertemuan Ke-5 — Flutter Profil App
 
 Aplikasi mobile berbasis Flutter yang menampilkan profil diri, keterampilan pemrograman, dan kumpulan proyek. Proyek ini dibuat sebagai latihan pengembangan aplikasi mobile menggunakan Flutter dan bahasa pemrograman Dart.
 
