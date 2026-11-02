@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pertemuanke5/profil_stats.dart';
+import 'package:pertemuanke5/widgets/profil_stats.dart';
 import 'widgets/profile_avatar.dart';
 import 'widgets/profile_info.dart';
-import 'package:pertemuanke5/experience_card.dart';
+import 'package:pertemuanke5/widgets/experience_card.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -50,7 +50,7 @@ class ProfilePage extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text(
-                        'Fitur edit belum aktif pada modul statis.',
+                        'Fitur Edit Belum Aktif Paa Modul Ini',
                       ),
                     ),
                   );
@@ -63,12 +63,12 @@ class ProfilePage extends StatelessWidget {
 
               const ProfileStats(),
 
-              const SizedBox(height: 24),
+             const SizedBox(height: 24),
 
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Pengalaman Kerja? Belum ada jir, nganggur',
+                  'Pengalaman Kerja',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
 
-              const Divider(),
+              const Divider(thickness: 4, color: Colors.teal),
 
               ListView.builder(
                 shrinkWrap: true,
