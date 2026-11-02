@@ -136,6 +136,7 @@ Proyek ini bertujuan untuk mempelajari dan mempraktikkan:
 - Penggunaan `TabBar` dan `TabBarView`.
 - Penggunaan `ListView.builder` untuk menampilkan daftar.
 - Penggunaan `SnackBar` untuk menampilkan notifikasi.
+- Penggunaan `BottomNavigationBar` untuk pindah antar halaman.
 - Pengelolaan gambar menggunakan assets.
 - Penerapan konsep *Extract Widget* untuk memisahkan komponen antarmuka.
 - Penggunaan parameter untuk mengirim data antarwidget.
