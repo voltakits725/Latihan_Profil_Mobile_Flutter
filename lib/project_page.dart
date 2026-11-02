@@ -28,6 +28,7 @@ class ProjectGua extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Kumpulan Project Gua'),
       backgroundColor: Colors.lightBlue,
+      centerTitle: true,
       
       ),
       body: Padding(
